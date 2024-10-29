@@ -4,14 +4,8 @@
 <%@ page import="javax.xml.crypto.Data" %>
 <%@ page import="java.util.Date" %>
 <%
-    ResourceBundle bundle = (ResourceBundle) request.getAttribute("bundle");
-    Locale locale = (Locale) request.getAttribute("locale");
-    if (bundle == null) {
-        bundle = ResourceBundle.getBundle("messages", new Locale("ru", "RU"));
-    }
-    if (locale == null) {
-        locale = new Locale("ru", "RU");
-    }
+    Locale locale = new Locale("en", "US");
+    ResourceBundle bundle = ResourceBundle.getBundle("messages", locale);
 %>
 <form method="GET" autocomplete="off">
     <label for="x"><%= bundle.getString("xLabel") %></label>

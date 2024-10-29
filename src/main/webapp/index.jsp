@@ -2,14 +2,8 @@
 <%@ page import="java.util.ResourceBundle" %>
 <%@ page import="java.util.Locale" %>
 <%
-    ResourceBundle bundle = (ResourceBundle) request.getAttribute("bundle");
-    Locale locale = (Locale) request.getAttribute("locale");
-    if (bundle == null) {
-        bundle = ResourceBundle.getBundle("messages", new Locale("ru", "RU"));
-    }
-    if (locale == null) {
-        locale = new Locale("ru", "RU");
-    }
+    Locale locale = new Locale("en", "US");
+    ResourceBundle bundle = ResourceBundle.getBundle("messages", locale);
 %>
 <!DOCTYPE html>
 <html lang="<%= locale.getLanguage() %>">
